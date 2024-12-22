@@ -46,6 +46,12 @@ If the prediction is incorrect, the user can provide feedback (marking a message
 Storing and Loading the Model:
 
 After training, the model can be saved to a file and loaded later for predictions. This eliminates the need to retrain the model every time.
+# HOW TO RUN THE MAIN.EXE FILE
+After configuring the raylib setup on your system by following the below link you have do the following setups.
+1.First you have to open the man.code-workplace.
+2.Click on main.cpp file.
+3.You just have to press control+f5 button in order to run the main.exe file.It will automatically do the linking work and run your program automatically with out mentioning the commands on the terminal.
+
 
 
 

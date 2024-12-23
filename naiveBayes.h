@@ -90,9 +90,6 @@ private:
     double totalHam = 0;
     double totalSpam = 0;
     double totalMessages = 0;
-    // int totalHam = 0;
-    // int totalSpam = 0;
-    // int totalMessages = 0;
 
 public:
     void readData(const string& filename) {
@@ -133,7 +130,7 @@ public:
         size_t totalVocabSize = 0;
         unordered_set<string> vocabSet;
 
-        // Combine the tokens from both spam and ham counts
+        // Combine the tokens from both spam and ham counts to calculate vocabulary size
         for (const auto& entry : spamCount) {
             vocabSet.insert(entry.first);
         }
@@ -142,7 +139,6 @@ public:
         }
         totalVocabSize = vocabSet.size();
         for (string& token : tokens) {
-            // spamProb += log((spamCount[token] + 1) / (double)(totalSpam + hamCount.size()));
             spamProb += log((spamCount[token] + 1) / (double)(totalSpam + totalVocabSize));
             hamProb += log((hamCount[token] + 1) / (double)(totalHam + totalVocabSize));
         }
@@ -274,17 +270,4 @@ public:
         }
         storeResults("modelResults.txt");
     }
-    void checking(){
-        int count = 0;
-        for (auto it = hamCount.begin(); it != hamCount.end() && count < 5; it++, count++) {
-            cout << "Ham Token: " << it->first << ", Count: " << it->second << endl;
-        }
-
-        // Looping through first 5 tokens of spamCount
-        count = 0;
-        for (auto it = spamCount.begin(); it != spamCount.end() && count < 5; it++, count++) {
-            cout << "Spam Token: " << it->first << ", Count: " << it->second << endl;
-        }
-    }
-
 };

@@ -275,6 +275,7 @@ int main()
     return 0;
 }
 
+// code to train model
 // int main(){
 //     // reading data from file and storing it in modelResults.txt file without UI
 //     NaiveBayes nb;
